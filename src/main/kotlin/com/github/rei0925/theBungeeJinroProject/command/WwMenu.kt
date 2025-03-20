@@ -1,9 +1,9 @@
-package com.github.rei0925.theBungeeJinroProject.Command
+package com.github.rei0925.theBungeeJinroProject.command
 
+import com.github.rei0925.theBungeeJinroProject.command.ClickText.clickableText
 import com.github.rei0925.theBungeeJinroProject.TheBungeeJinroProject
 import net.md_5.bungee.api.ChatColor
 import net.md_5.bungee.api.CommandSender
-import net.md_5.bungee.api.chat.ClickEvent
 import net.md_5.bungee.api.chat.TextComponent
 import net.md_5.bungee.api.connection.ProxiedPlayer
 import java.util.*
@@ -31,14 +31,5 @@ object WwMenu {
 
         // 複数のTextComponentをまとめて送信
         sender.sendMessage(title, settings, play, exit)
-    }
-
-    /**
-     * クリック可能なメニュー項目を作成
-     */
-    private fun clickableText(label: String, command: String): TextComponent {
-        val component = TextComponent(label)
-        component.clickEvent = ClickEvent(ClickEvent.Action.RUN_COMMAND, command)
-        return component
     }
 }
