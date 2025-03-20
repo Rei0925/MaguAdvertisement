@@ -26,6 +26,16 @@ class TheBungeeJinroProject : Plugin() {
 
         val commandManager = BungeeCommandManager(this)
         commandManager.registerCommand(CommandListener())
+
+        // boolean補完候補
+        commandManager.commandCompletions.registerAsyncCompletion("bool") { _ ->
+            listOf("true", "false")
+        }
+        // boolean補完候補
+        commandManager.commandCompletions.registerAsyncCompletion("settings") { _ ->
+            listOf("language")
+        }
+
     }
 
     override fun onDisable() {
