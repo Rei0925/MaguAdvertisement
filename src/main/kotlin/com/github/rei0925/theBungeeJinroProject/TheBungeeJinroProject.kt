@@ -5,7 +5,7 @@ import net.md_5.bungee.api.plugin.Plugin
 class TheBungeeJinroProject : Plugin() {
 
     override fun onEnable() {
-        logger.info("This plugin onEnable")
+        logger.info("This plugin onEnable!")
     }
 
     override fun onDisable() {
