@@ -11,13 +11,23 @@ repositories {
     maven("https://oss.sonatype.org/content/groups/public/") {
         name = "sonatype"
     }
+    maven("https://repo.aikar.co/content/groups/aikar/")
+    maven("https://jitpack.io")
+
+    maven("https://maven.pkg.github.com/MagutyanServer/Package") {
+        credentials {
+            username = System.getenv("GITHUB_USERNAME")
+            password = System.getenv("GITHUB_TOKEN")
+        }
+    }
 }
 
 dependencies {
-    compileOnly("net.md-5:bungeecord-api:1.19-R0.1-SNAPSHOT")
+    compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT")
+    implementation ("co.aikar:acf-bungee:0.5.1-SNAPSHOT")
 }
 
-val targetJavaVersion = 8
+val targetJavaVersion = 21
 kotlin {
     jvmToolchain(targetJavaVersion)
 }
