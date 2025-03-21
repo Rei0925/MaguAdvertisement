@@ -4,6 +4,7 @@ import co.aikar.commands.BaseCommand
 import co.aikar.commands.annotation.*
 import com.github.rei0925.theBungeeJinroProject.command.WwMenu
 import com.github.rei0925.theBungeeJinroProject.command.WwSetting
+import com.github.rei0925.theBungeeJinroProject.room.RoomCommandListener
 import net.md_5.bungee.api.CommandSender
 
 
@@ -22,5 +23,11 @@ class CommandListener : BaseCommand() {
     @CommandCompletion("@settings @toggle")
     fun onSetting(sender: CommandSender, settings: String, value: String){
         WwSetting.setting(sender,settings,value)
+    }
+
+    @Subcommand("room")
+    @Description("ルームのメニュー")
+    fun onRoom(sender: CommandSender){
+        RoomCommandListener.openMenu(sender)
     }
 }

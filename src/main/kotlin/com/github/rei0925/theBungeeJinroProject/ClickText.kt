@@ -1,4 +1,4 @@
-package com.github.rei0925.theBungeeJinroProject.command
+package com.github.rei0925.theBungeeJinroProject
 
 import net.md_5.bungee.api.chat.ClickEvent
 import net.md_5.bungee.api.chat.TextComponent
