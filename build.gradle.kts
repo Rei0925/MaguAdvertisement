@@ -14,12 +14,6 @@ repositories {
     maven("https://repo.aikar.co/content/groups/aikar/")
     maven("https://jitpack.io")
 
-    maven("https://maven.pkg.github.com/MagutyanServer/Package") {
-        credentials {
-            username = System.getenv("GITHUB_USERNAME")
-            password = System.getenv("GITHUB_TOKEN")
-        }
-    }
 }
 
 dependencies {

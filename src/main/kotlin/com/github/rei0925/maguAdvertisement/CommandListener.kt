@@ -1,10 +1,9 @@
-package com.github.rei0925.theBungeeJinroProject
+package com.github.rei0925.maguAdvertisement
 
 import co.aikar.commands.BaseCommand
 import co.aikar.commands.annotation.*
-import com.github.rei0925.theBungeeJinroProject.command.WwMenu
-import com.github.rei0925.theBungeeJinroProject.command.WwSetting
-import com.github.rei0925.theBungeeJinroProject.room.RoomCommandListener
+import com.github.rei0925.maguAdvertisement.command.WwMenu
+import com.github.rei0925.maguAdvertisement.command.WwSetting
 import net.md_5.bungee.api.CommandSender
 
 
@@ -25,9 +24,4 @@ class CommandListener : BaseCommand() {
         WwSetting.setting(sender,settings,value)
     }
 
-    @Subcommand("room")
-    @Description("ルームのメニュー")
-    fun onRoom(sender: CommandSender){
-        RoomCommandListener.openMenu(sender)
-    }
 }

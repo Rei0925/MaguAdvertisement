@@ -1,4 +1,4 @@
-package com.github.rei0925.theBungeeJinroProject.utils
+package com.github.rei0925.maguAdvertisement.utils
 
 import net.md_5.bungee.config.Configuration
 import net.md_5.bungee.config.ConfigurationProvider

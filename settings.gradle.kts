@@ -1,1 +1,1 @@
-rootProject.name = "The-Bungee-Jinro-Project"
+rootProject.name = "MaguAdvertisement"

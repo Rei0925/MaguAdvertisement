@@ -1,15 +1,15 @@
-package com.github.rei0925.theBungeeJinroProject
+package com.github.rei0925.maguAdvertisement
 
 import co.aikar.commands.BungeeCommandManager
-import com.github.rei0925.theBungeeJinroProject.utils.LanguageManager
+import com.github.rei0925.maguAdvertisement.utils.LanguageManager
 import net.md_5.bungee.api.plugin.Plugin
 import java.io.File
 import java.nio.file.Files
 
-class TheBungeeJinroProject : Plugin() {
+class MaguAdvertisement : Plugin() {
 
     companion object {
-        lateinit var instance: TheBungeeJinroProject
+        lateinit var instance: MaguAdvertisement
         lateinit var langManager: LanguageManager
     }
 

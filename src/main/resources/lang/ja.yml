@@ -1,7 +1,3 @@
 menu:
-  title: "人狼ゲーム"
+  title: "MaguAdvertisement"
   settings: "設定"
-  play: "プレイ"
-  room: "ルーム"
-  room_menu: "人狼 ルームメニュー"
-  room_description: "人狼ルームを管理するメニューです。下のボタンから、参加するかルームを作成してください！"

@@ -1,6 +1,6 @@
-package com.github.rei0925.theBungeeJinroProject.command
+package com.github.rei0925.maguAdvertisement.command
 
-import com.github.rei0925.theBungeeJinroProject.TheBungeeJinroProject
+import com.github.rei0925.maguAdvertisement.MaguAdvertisement
 import net.md_5.bungee.api.ChatColor
 import net.md_5.bungee.api.CommandSender
 import net.md_5.bungee.api.chat.TextComponent
@@ -18,11 +18,11 @@ object WwSetting {
 
             // プレイヤーごとの言語を取得
             val locale: Locale = sender.locale ?: Locale.ENGLISH
-            val langManager = TheBungeeJinroProject.langManager
+            val langManager = MaguAdvertisement.langManager
 
             // 多言語メッセージを取得
             val title =
-                TextComponent("═══ ${langManager.getMessage(locale, "menu.title", "Werewolf Game")} ════════════════\n")
+                TextComponent("═══ ${langManager.getMessage(locale, "menu.title", "MaguAdvertisement")} ════════════════\n")
             title.color = ChatColor.of("#EA553A")
 
             // 複数のTextComponentをまとめて送信
