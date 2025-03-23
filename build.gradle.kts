@@ -18,6 +18,7 @@ repositories {
 
 dependencies {
     compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT")
+    implementation("net.kyori:adventure-platform-bungeecord:4.3.0")
     implementation ("co.aikar:acf-bungee:0.5.1-SNAPSHOT")
 }
 
