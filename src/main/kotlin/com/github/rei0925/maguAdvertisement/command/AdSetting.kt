@@ -7,7 +7,7 @@ import net.md_5.bungee.api.chat.TextComponent
 import net.md_5.bungee.api.connection.ProxiedPlayer
 import java.util.*
 
-object WwSetting {
+object AdSetting {
     fun setting(sender: CommandSender, settings: String, value: String) {
         if (settings.isBlank()) {
 
