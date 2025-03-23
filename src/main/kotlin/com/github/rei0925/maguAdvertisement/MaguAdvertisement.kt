@@ -35,6 +35,10 @@ class MaguAdvertisement : Plugin() {
         commandManager.commandCompletions.registerAsyncCompletion("settings") { _ ->
             listOf("language")
         }
+        //AD補完候補
+        commandManager.commandCompletions.registerAsyncCompletion("ad") { _ ->
+            listOf("Enter the text to add to the advertisement...")
+        }
     }
 
     override fun onDisable() {
