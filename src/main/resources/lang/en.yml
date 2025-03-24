@@ -2,3 +2,11 @@ menu:
   title: "MaguAdvertisement"
   settings: "Settings"
   ad: "AD"
+  create: "Create"
+  confirm: "Confirm"
+  level:
+    level_name: "AD Level"
+    description: "Sets the frequency of advertisements sent within the server.\n* §cWhen you purchase ${AdBlock}, this frequency is ignored, and the client can configure it instead."
+    low: "LOW"
+    middle: "MIDDLE"
+    high: "HIGH"

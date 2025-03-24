@@ -2,3 +2,11 @@ menu:
   title: "MaguAdvertisement"
   settings: "設定"
   ad: "広告"
+  create: "作成"
+  confirm: "決定"
+  level:
+    level_name: "広告レベル"
+    description: "サーバー内で、広告を送信する頻度を設定します。\n ※${AdBlock}を購入すると、この頻度は無視されクライアントが設定できるようになります。"
+    low: "低"
+    middle: "中"
+    high: "高"

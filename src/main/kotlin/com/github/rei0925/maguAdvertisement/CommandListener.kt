@@ -6,6 +6,7 @@ import com.github.rei0925.maguAdvertisement.ad.AdCreateImpl
 import com.github.rei0925.maguAdvertisement.ad.AdLevel
 import com.github.rei0925.maguAdvertisement.api.Api
 import com.github.rei0925.maguAdvertisement.api.ApiImpl
+import com.github.rei0925.maguAdvertisement.command.AdInfo
 import com.github.rei0925.maguAdvertisement.command.AdMenu
 import com.github.rei0925.maguAdvertisement.command.AdSetting
 import net.kyori.adventure.text.Component
@@ -26,19 +27,26 @@ class CommandListener : BaseCommand() {
 
     @Subcommand("setting")
     @Description("設定メニュー表示")
-    @CommandCompletion("@settings @toggle")
+    @CommandCompletion("@settings true|false")
     fun onSetting(sender: CommandSender, settings: String, value: String){
+        AdSetting.setting(sender,settings,value)
+    }
+
+    @Subcommand("setting language")
+    @Description("設定メニュー表示")
+    @CommandCompletion("@language")
+    fun onLanguage(sender: CommandSender, settings: String, value: String){
         AdSetting.setting(sender,settings,value)
     }
 
     @Subcommand("add")
     @Description("Add a new advertisement")
-    @CommandCompletion("LOW|MEDIUM|HIGH 1day|3day|5day|1week|2week @ad")
+    @CommandCompletion("LOW|MIDDLE|HIGH 1day|3day|5day|1week|2week @ad")
     fun onAdd(sender: CommandSender, arg1: String, arg2: String, arg3: String) {
         if (sender is ProxiedPlayer) {  // CommandSender が Player であることを確認
             val level = when (arg1.uppercase()) {
                 "LOW" -> AdLevel.LOW
-                "MEDIUM" -> AdLevel.MIDDLE
+                "MIDDLE" -> AdLevel.MIDDLE
                 "HIGH" -> AdLevel.HIGH
                 else -> AdLevel.MIDDLE // Default to MEDIUM if invalid level
             }
@@ -67,6 +75,13 @@ class CommandListener : BaseCommand() {
         }
     }
 
+    @Subcommand("info")
+    @Description("その広告の情報")
+    @CommandCompletion("AdId|@AdActiveId")
+    fun adInfo(sender: CommandSender, arg1: Int){
+        AdInfo.info(sender, arg1)
+    }
+
     // Helper function to parse duration (e.g., "1day", "1week") to LocalDateTime
     private fun parseDurationToExpiryDate(duration: String): LocalDateTime {
         val now = LocalDateTime.now()
@@ -76,5 +91,4 @@ class CommandListener : BaseCommand() {
             else -> now
         }
     }
-
 }

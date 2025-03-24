@@ -13,7 +13,7 @@ repositories {
     }
     maven("https://repo.aikar.co/content/groups/aikar/")
     maven("https://jitpack.io")
-
+    maven("https://libraries.minecraft.net/")
 }
 
 dependencies {
