@@ -35,8 +35,8 @@ class CommandListener : BaseCommand() {
     @Subcommand("setting language")
     @Description("設定メニュー表示")
     @CommandCompletion("@language")
-    fun onLanguage(sender: CommandSender, settings: String, value: String){
-        AdSetting.setting(sender,settings,value)
+    fun onLanguage(sender: CommandSender, settings: String){
+        AdSetting.setLanguage(sender, settings)
     }
 
     @Subcommand("add")

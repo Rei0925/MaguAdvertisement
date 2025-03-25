@@ -14,13 +14,14 @@ repositories {
     maven("https://repo.aikar.co/content/groups/aikar/")
     maven("https://jitpack.io")
     maven("https://libraries.minecraft.net/")
+    maven("https://oss.sonatype.org/content/repositories/snapshots" ) // This lets gradle find the BungeeCord files online
 }
 
 dependencies {
-    compileOnly("net.md-5:bungeecord-api:1.21-R0.1-SNAPSHOT")
+    compileOnly("net.md-5:bungeecord-api:1.21-R0.3")
     implementation("net.kyori:adventure-platform-bungeecord:4.3.0")
     implementation ("co.aikar:acf-bungee:0.5.1-SNAPSHOT")
-    implementation ("org.json:json:20210307")
+    implementation ("org.json:json:20231013")
 
 }
 

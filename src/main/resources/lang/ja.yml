@@ -1,5 +1,5 @@
 menu:
-  title: "MaguAdvertisement"
+  title: "まぐちゃん広告"
   settings: "設定"
   ad: "広告"
   create: "作成"
@@ -10,3 +10,5 @@ menu:
     low: "低"
     middle: "中"
     high: "高"
+  language:
+    change: "言語が日本語に変更されました！"
