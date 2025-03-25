@@ -16,19 +16,24 @@ object AdMenu {
             return
         }
 
-        // プレイヤーごとの言語を取得
-        val locale: Locale = sender.locale ?: Locale.ENGLISH
+        val uuid = sender.uniqueId.toString()
+        val langCode = AdSetting.getLanguageByUUID(uuid)  // UUIDから言語コードを取得
+        val locale = AdSetting.toLocale(langCode)         // 言語コード → Locale に変換
+
         val langManager = MaguAdvertisement.langManager
 
         // 多言語メッセージを取得
-        val title = TextComponent("═══ ${langManager.getMessage(locale, "menu.title", "MaguAdvertisement")} ════════════════\n")
+        val title = TextComponent(
+            "═══ ${langManager.getMessage(locale, "menu.title", "MaguAdvertisement")} ════════════════\n"
+        )
         title.color = ChatColor.of("#EA553A")
+        title.isBold = true
 
         // クリック可能なメニュー項目
         val settings = clickableText("[${langManager.getMessage(locale, "menu.settings", "Settings")}]", "/ww settings")
         settings.color = ChatColor.YELLOW
 
-        // 複数のTextComponentをまとめて送信
+        // メニューを表示
         sender.sendMessage(title, settings)
     }
 }

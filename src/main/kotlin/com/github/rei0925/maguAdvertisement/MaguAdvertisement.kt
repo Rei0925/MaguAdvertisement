@@ -1,15 +1,18 @@
 package com.github.rei0925.maguAdvertisement
 
 import co.aikar.commands.BungeeCommandManager
+import com.github.rei0925.maguAdvertisement.listener.PlayerLoginListener
 import com.github.rei0925.maguAdvertisement.utils.LanguageManager
+import net.md_5.bungee.api.plugin.Listener
 import net.md_5.bungee.api.plugin.Plugin
 import org.json.JSONArray
 import java.io.File
 import java.nio.file.Files
+import java.util.concurrent.Executors
 import java.util.jar.JarFile
 import java.util.logging.Level
 
-class MaguAdvertisement : Plugin() {
+class MaguAdvertisement : Plugin(), Listener {
 
     companion object {
         lateinit var instance: MaguAdvertisement
@@ -31,6 +34,8 @@ class MaguAdvertisement : Plugin() {
 
         val commandManager = BungeeCommandManager(this)
         commandManager.registerCommand(CommandListener())
+
+        proxy.pluginManager.registerListener(this, PlayerLoginListener())
 
         // 補完候補
         commandManager.commandCompletions.registerAsyncCompletion("bool") { _ ->
@@ -96,6 +101,9 @@ class MaguAdvertisement : Plugin() {
         // `ad_list.json`をコピー
         val adListFile = File(dataFolder, "ad_list.json")
         copyResourceFile("ad_list.json", adListFile)
+        // playerリスト
+        val playerListFile = File(dataFolder, "player_list.json")
+        copyResourceFile("player_list.json", playerListFile)
     }
 
     /**

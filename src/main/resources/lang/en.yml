@@ -10,3 +10,5 @@ menu:
     low: "LOW"
     middle: "MIDDLE"
     high: "HIGH"
+  language:
+    change: "Language has been changed to English!"
