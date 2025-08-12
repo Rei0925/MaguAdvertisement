@@ -17,6 +17,11 @@ class MaguAdvertisement : Plugin(), Listener {
     companion object {
         lateinit var instance: MaguAdvertisement
         lateinit var langManager: LanguageManager
+
+        const val EDITION = "公開テスト" // エディションは定数
+
+        val VERSION: String
+            get() = instance.description.version // plugin.yml の version と同期
     }
 
     override fun onEnable() {

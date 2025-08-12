@@ -9,7 +9,9 @@ import com.github.rei0925.maguAdvertisement.api.ApiImpl
 import com.github.rei0925.maguAdvertisement.command.AdInfo
 import com.github.rei0925.maguAdvertisement.command.AdMenu
 import com.github.rei0925.maguAdvertisement.command.AdSetting
+import com.github.rei0925.maguAdvertisement.command.AdSystemInfo
 import net.kyori.adventure.text.Component
+import net.md_5.bungee.api.ChatColor
 import net.md_5.bungee.api.CommandSender
 import net.md_5.bungee.api.chat.TextComponent
 import net.md_5.bungee.api.connection.ProxiedPlayer
@@ -80,6 +82,20 @@ class CommandListener : BaseCommand() {
     @CommandCompletion("AdId|@AdActiveId")
     fun adInfo(sender: CommandSender, arg1: Int){
         AdInfo.info(sender, arg1)
+    }
+
+    @Subcommand("system info")
+    @Description("プラグインの情報")
+    @CommandPermission("advertisement.ad_info") // 権限名は任意
+    fun adInfoCommand(sender: CommandSender) {
+        if (!sender.hasPermission("advertisement.ad_info")) {
+            val permissionError = TextComponent("You do not have permission to execute this command.")
+            permissionError.color = ChatColor.RED
+            sender.sendMessage(permissionError)
+            AdSystemInfo.systemInfo(sender)
+            return
+        }
+
     }
 
     // Helper function to parse duration (e.g., "1day", "1week") to LocalDateTime

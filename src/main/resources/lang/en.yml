@@ -12,3 +12,5 @@ menu:
     high: "HIGH"
   language:
     change: "Language has been changed to English!"
+  error:
+    permission: "You do not have permission to execute this command."

@@ -12,3 +12,5 @@ menu:
     high: "高"
   language:
     change: "言語が日本語に変更されました！"
+  error:
+    permission: "このコマンドを実行する権限がありません"
